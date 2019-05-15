@@ -3,15 +3,16 @@
     <h1>Welcome To Cocktails Creation</h1>
   </div>
 </div>
-
+<div class="container">
   <div class="cards">
   <% @cocktails.each do |cocktail| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/1162077/screenshots/4485031/cocktail-jar.png)">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://pics.clipartpng.com/midle/Cocktail_PNG_Clip_Art-2660.png)">
     <%= link_to cocktail_path(cocktail) do %>
         <h1><%= cocktail.name %></h1>
       <% end %>
     </div>
     <% end %>
   </div>
-  <%= link_to "Create a new cocktail", new_cocktail_path, class: 'btn btn-primary btn-lg btn-block' %>
+  <%= link_to "Create a new cocktail", new_cocktail_path, class: 'btn btn-primary btn-lg btn-block'  %>
+  </div>
 
