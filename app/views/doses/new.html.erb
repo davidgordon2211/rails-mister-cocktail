@@ -1,0 +1,14 @@
+<h1>Let's add some ingredients!</h1>
+<!-- <form action="/restaurants/:restaurant_id/reviews" method="post">
+</form> -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient%>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

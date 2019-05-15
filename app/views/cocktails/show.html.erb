@@ -1,0 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/4640/screenshots/3945799/suzpalbanner.png);">
+  <div class="container">
+    <h1><%= @cocktail.name%></h1>
+  </div>
+</div>
+<div class="d-print-inline-block text-monospace">
+<% @cocktail.doses.each do |c| %>
+  <p><%= c.description %> - <%= c.ingredient.name %></p>
+  <%= link_to "Delete this ingredient", dose_path(c.id), method: :delete, class:"btn btn-danger" %>
+<% end %>
+</div>
+<br>
+<br>
+<br>
+  <%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail), class:"btn btn-primary text-monospace" %>
+  <%= link_to "Back to cocktails", cocktails_path, class:"btn btn-primary text-monospace" %>
