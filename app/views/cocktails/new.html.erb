@@ -1,12 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/4640/screenshots/3945799/suzpalbanner.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'cocktail_banner.jpg' %>);">
   <div class="container">
-    <h1>Welcome To Cocktails Creation</h1>
+    <h1>Enter Your New Cocktail</h1>
   </div>
 </div>
+<div class="container">
 <%= simple_form_for(@cocktail) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.submit "Create Cocktail" %>
+  <div class= "form-group">
+  <%= f.input :name %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  </div>
+  <%= f.submit "Create Cocktail", class: "btn btn-primary btn-lg" %>
 <% end %>
-<%= link_to "Back to cocktails", cocktails_path %>
+<%= link_to "Back to cocktails", cocktails_path, class: "btn btn-danger btn-lg mt-5" %>
+</div>
