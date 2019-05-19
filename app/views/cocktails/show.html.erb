@@ -4,28 +4,21 @@
   </div>
 </div>
 <div class= "d-flex p-4 bg-light border-bottom align-items-center justify-content-between">
-<div class="container">
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-</div>
-<% @cocktail.doses.each do |c| %>
-<div class="container">
-  <h2>Ingredients</h2>
-  <br>
-  <p><%= c.description %> - <%= c.ingredient.name %></p>
-  <%= link_to "Delete this ingredient", dose_path(c.id), method: :delete, class:"btn btn-danger" %>
-  <br>
-  <br>
-  <br>
-<% end %>
-<%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail), class:"btn btn-primary text-monospace" %>
-  <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete,class:"btn btn-danger" %>
-  <%= link_to "Back to cocktails", cocktails_path, class:"btn btn-primary text-monospace" %>
-</div>
-</div>
-<br>
-<br>
-<br>
-<div class= "container">
-
-</div>
+  <div class="container">
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  </div>
+  <% @cocktail.doses.each do |c| %>
+  <div class="container">
+    <h2>Ingredients</h2>
+    <br>
+    <p><%= c.description %> - <%= c.ingredient.name %></p>
+    <%= link_to "Delete this ingredient", dose_path(c.id), method: :delete, class:"badge badge-danger" %>
+    <br>
+    <br>
+    <br>
+  <% end %>
+  <%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail), class:"badge badge-primary" %>
+    <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete,class:"badge badge-danger" %>
+    <%= link_to "Back to cocktails", cocktails_path, class:"badge badge-primary" %>
+  </div>
 </div>
